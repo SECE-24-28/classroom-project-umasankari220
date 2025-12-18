@@ -11,10 +11,14 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const req = await axios.post("http://localhost:8001/login", {
-        email,
-        password,
-      });
+      const req = await axios.post(
+  `${import.meta.env.VITE_BACKEND_URL}/login`,
+  {
+    email,
+    password,
+  }
+);
+
 
       const { message, isLoggedIn } = req.data;
 
