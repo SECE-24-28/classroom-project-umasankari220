@@ -12,11 +12,15 @@ const Signup = () => {
     event.preventDefault();
 
     try {
-      const req = await axios.post("http://localhost:8001/signup", {
-        email,
-        username,
-        password,
-      });
+    const req = await axios.post(
+  `${import.meta.env.VITE_BACKEND_URL}/signup`,
+  {
+    email,
+    username,
+    password,
+  }
+);
+
 
       const { Message, isSignup } = req.data;
 
